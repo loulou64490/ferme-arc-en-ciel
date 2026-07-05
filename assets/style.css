@@ -1,33 +1,29 @@
 /* ============================================
-   FERME ARC-EN-CIEL — Design System & Styles
+   FERME ARC-EN-CIEL — Brutaliste Coloré
    ============================================ */
 
 /* --- Custom Properties --- */
 :root {
-  /* Color palette */
-  --color-primary: #422006;
+  /* Colors */
+  --color-primary: #1a1a1a;
   --color-hero-bg: #3a5a2c;
-  --color-hero-overlay: rgba(30, 60, 20, 0.55);
 
-  --color-programme-text: #422006;
   --color-programme-bg: #fef9c3;
+  --color-programme-text: #422006;
+  --color-programme-accent: #f59e0b;
 
-  --color-aventure-bg: #ffeaa7;
-  --color-aventure-accent: #e6c85a;
+  --color-sejours-bg: #fffbeb;
+  --color-sejours-text: #422006;
 
-  --color-explo-bg: #ffdfa3;
-  --color-explo-accent: #e0b56a;
+  --color-annee-bg: #ede9fe;
+  --color-annee-text: #3b0764;
+  --color-annee-accent: #7c3aed;
 
-  --color-ferme-text: #500724;
-  --color-ferme-bg: #fdf2f8;
-  --color-ferme-header: rgba(80, 7, 36, 0.19);
-  --color-ferme-stripe: rgba(80, 7, 36, 0.05);
-
-  --color-contact-text: #042f2e;
   --color-contact-bg: #f0fdfa;
+  --color-contact-text: #042f2e;
 
-  --color-footer-text: #264e00;
   --color-footer-bg: #cdebb0;
+  --color-footer-text: #264e00;
   --color-footer-border: #264e00;
 
   --color-header-bg: rgba(255, 255, 255, 0.34);
@@ -38,16 +34,11 @@
   --font-heading: 'Syne', sans-serif;
 
   /* Layout */
-  --max-width: 85rem;
+  --max-width: 72rem;
   --blur: 8px;
-  --shadow: 3px 6px rgba(0, 0, 0, 0.15);
-  --radius: 1rem;
-  --radius-sm: 0.5rem;
 
-  /* Transitions */
-  --transition-fast: 0.2s ease;
-  --transition-medium: 0.4s ease;
-  --transition-slow: 0.6s ease;
+  /* Borders — brutaliste */
+  --border: 3px solid var(--color-primary);
 }
 
 /* --- Reset & Base --- */
@@ -67,9 +58,9 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #1a1a1a;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-primary);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -77,12 +68,11 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-  transition: opacity var(--transition-fast);
   cursor: url('link.svg'), auto;
 }
 
 a:hover {
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
 ul {
@@ -93,6 +83,10 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+p + p {
+  margin-top: 0.8rem;
 }
 
 /* ============================================
@@ -106,13 +100,13 @@ img {
   width: 100%;
   background-color: transparent;
   backdrop-filter: none;
-  transition: background-color 0.5s ease, backdrop-filter 0.5s ease;
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
 }
 
 .site-header.scrolled {
   background-color: var(--color-header-bg);
   backdrop-filter: blur(var(--blur));
-  border-bottom: 2px solid var(--color-primary);
+  border-bottom: 3px solid var(--color-primary);
 }
 
 .site-header__inner {
@@ -122,12 +116,12 @@ img {
   justify-content: space-between;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .site-header__logo {
   font-family: var(--font-cursive);
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   padding: 0.6rem 0;
   white-space: nowrap;
@@ -137,7 +131,7 @@ img {
   opacity: 1;
 }
 
-/* Mobile hamburger (CSS-only) */
+/* Mobile hamburger */
 .nav-toggle {
   display: none;
 }
@@ -155,23 +149,23 @@ img {
 }
 
 .nav-toggle-label .navicon {
-  background: #1a1a1a;
+  background: var(--color-primary);
   display: block;
   height: 3px;
   width: 23px;
   position: relative;
-  transition: background var(--transition-fast);
+  transition: background 0.2s ease;
 }
 
 .nav-toggle-label .navicon::before,
 .nav-toggle-label .navicon::after {
-  background: #1a1a1a;
+  background: var(--color-primary);
   content: '';
   display: block;
   height: 100%;
   width: 100%;
   position: absolute;
-  transition: all var(--transition-fast);
+  transition: all 0.2s ease;
 }
 
 .nav-toggle-label .navicon::before {
@@ -182,7 +176,6 @@ img {
   top: -7px;
 }
 
-/* Menu open state */
 .nav-toggle:checked ~ .main-nav {
   max-height: 16rem;
 }
@@ -205,7 +198,7 @@ img {
   clear: both;
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-fast);
+  transition: max-height 0.2s ease;
   width: 100%;
 }
 
@@ -216,20 +209,18 @@ img {
 .main-nav__link {
   display: block;
   padding: 0.7rem 1rem;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  position: relative;
 }
 
 .main-nav__link:hover {
   opacity: 1;
 }
 
-/* Desktop nav */
 @media (min-width: 55em) {
   .site-header__inner {
     flex-wrap: nowrap;
-    padding: 0 1.4rem;
+    padding: 0 2rem;
   }
 
   .nav-toggle-label {
@@ -256,14 +247,14 @@ img {
   .main-nav__link {
     padding: 0;
     display: inline-block;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     position: relative;
   }
 
   .main-nav__link::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     width: 100%;
     height: 2px;
@@ -284,7 +275,7 @@ img {
 }
 
 /* ============================================
-   HERO SECTION
+   HERO
    ============================================ */
 .hero {
   position: relative;
@@ -328,16 +319,11 @@ img {
   color: #fff;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 2.5rem 1rem;
+  padding: 3rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 2rem;
-  animation: heroFadeIn 1.2s ease-out;
-}
-
-.hero__text {
-  text-align: left;
 }
 
 .hero__title {
@@ -346,38 +332,35 @@ img {
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 0.3rem;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 .hero__subtitle {
   font-family: var(--font-body);
-  font-size: clamp(0.95rem, 2vw, 1.3rem);
+  font-size: clamp(0.95rem, 2vw, 1.25rem);
   font-weight: 400;
   opacity: 0.9;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
 }
 
 .hero__cta {
   display: inline-block;
   padding: 0.75rem 1.8rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   font-family: var(--font-body);
   color: var(--color-primary);
   background-color: var(--color-programme-bg);
-  border: 2px solid var(--color-primary);
-  border-radius: 50px;
-  transition: all var(--transition-medium);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 3px solid var(--color-primary);
+  transition: background-color 0.2s ease;
   white-space: nowrap;
   flex-shrink: 0;
 }
 
 .hero__cta:hover {
   opacity: 1;
-  background-color: var(--color-aventure-bg);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  background-color: var(--color-programme-accent);
+  color: #fff;
 }
 
 @media (max-width: 600px) {
@@ -386,22 +369,15 @@ img {
     align-items: flex-start;
     gap: 1.2rem;
   }
+
+  .hero__image {
+    object-position: 75% center;
+  }
 }
 
 @media (min-width: 55em) {
   .hero__content {
-    padding: 2.5rem 1.4rem;
-  }
-}
-
-@keyframes heroFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+    padding: 3rem 2rem;
   }
 }
 
@@ -409,316 +385,432 @@ img {
    SECTIONS — Common
    ============================================ */
 .section {
-  padding: 3rem 0;
+  padding: 4rem 0;
   scroll-margin-top: 3.5rem;
 }
 
 .section__inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 .section__title {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-bottom: 1.5rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 55em) {
+  .section__inner {
+    padding: 0 2rem;
+  }
+
+  .section {
+    padding: 5rem 0;
+  }
 }
 
 /* ============================================
-   PROGRAMME SECTION
+   PROGRAMME ÉTÉ — Tableau résumé + Infos
    ============================================ */
 .section--programme {
   background-color: var(--color-programme-bg);
   color: var(--color-programme-text);
-  border-top: 2px solid var(--color-programme-text);
-  border-bottom: 2px solid var(--color-programme-text);
+  border-top: 3px solid var(--color-programme-text);
+  border-bottom: 3px solid var(--color-programme-text);
 }
 
-.section--programme .section__title {
-  text-align: center;
-}
-
-.programme-intro {
-  text-align: center;
-  max-width: 42rem;
-  margin: 0 auto 2rem;
-  font-size: 1.05rem;
-  opacity: 0.85;
-}
-
-/* --- Activity Group (Aventure Nature / Explorateurs) --- */
-.activity-group {
+/* --- Table wrapper for mobile scroll --- */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   margin-bottom: 2.5rem;
 }
 
-.activity-group:last-child {
-  margin-bottom: 0;
+/* --- Summary Table (brutaliste) --- */
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid currentColor;
+  font-size: 0.95rem;
 }
 
-.activity-group__header {
-  display: inline-block;
+.summary-table th,
+.summary-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
   border: 2px solid currentColor;
-  border-bottom: none;
-  margin: 1rem 1rem 0 1rem;
-  padding: 1rem 1.8rem;
-  border-radius: var(--radius) var(--radius) 0 0;
 }
 
-.activity-group--aventure .activity-group__header {
-  background-color: var(--color-aventure-bg);
+.summary-table thead {
+  background-color: rgba(0, 0, 0, 0.08);
 }
 
-.activity-group--explo .activity-group__header {
-  background-color: var(--color-explo-bg);
+.summary-table th {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-.activity-group__name {
-  font-family: var(--font-cursive);
-  font-size: clamp(1.6rem, 4vw, 2.5rem);
+.summary-table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.04);
 }
 
-.activity-group__age {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-top: 0.2rem;
+.summary-table a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 600;
 }
 
-/* --- Activity Cards Grid --- */
-.activity-cards {
+.summary-table a:hover {
+  opacity: 1;
+  text-decoration-thickness: 2px;
+}
+
+/* --- Infos Pratiques --- */
+.infos-pratiques {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px dashed var(--color-programme-text);
+}
+
+.infos-pratiques__title {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.8rem;
+}
+
+.infos-pratiques__list {
+  padding-left: 1.2rem;
+}
+
+.infos-pratiques__list li {
+  list-style: "→ ";
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+}
+
+/* ============================================
+   DÉTAILS DES SÉJOURS
+   ============================================ */
+.section--sejours {
+  background-color: var(--color-sejours-bg);
+  color: var(--color-sejours-text);
+  border-bottom: 3px solid var(--color-sejours-text);
+}
+
+/* --- Single séjour block --- */
+.sejour {
   display: grid;
   grid-template-columns: 1fr;
-  border: 2px solid var(--color-programme-text);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.activity-group--aventure .activity-cards {
-  background-color: var(--color-aventure-bg);
-}
-
-.activity-group--explo .activity-cards {
-  background-color: var(--color-explo-bg);
+  gap: 2rem;
+  align-items: start;
 }
 
 @media (min-width: 50rem) {
-  .activity-cards--two {
-    grid-template-columns: 1fr 1fr;
+  .sejour {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 3rem;
   }
 
-  .activity-cards--three {
+  .sejour--reverse {
+    grid-template-columns: 1.3fr 1fr;
+  }
+
+  .sejour--reverse .sejour__image {
+    order: 2;
+  }
+
+  .sejour--reverse .sejour__content {
+    order: 1;
+  }
+}
+
+/* --- Image placeholder --- */
+.sejour__image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: 3px dashed rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.sejour__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sejour__image-placeholder {
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 1rem;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+/* --- Séjour content --- */
+.sejour__title {
+  font-family: var(--font-cursive);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.sejour__meta {
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+  border-left: 4px solid var(--color-programme-accent);
+  padding-left: 0.8rem;
+}
+
+.sejour__text {
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.sejour__note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+/* --- Séparateur --- */
+.sejour__separator {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 3rem 0;
+}
+
+@media (min-width: 50rem) {
+  .sejour__separator {
+    margin: 4rem 0;
+  }
+}
+
+/* ============================================
+   PROGRAMME À L'ANNÉE (violet)
+   ============================================ */
+.section--annee {
+  background-color: var(--color-annee-bg);
+  color: var(--color-annee-text);
+  border-bottom: 3px solid var(--color-annee-text);
+}
+
+.section--annee .section__title {
+  color: var(--color-annee-text);
+}
+
+.section--annee .summary-table {
+  border-color: var(--color-annee-text);
+}
+
+.section--annee .summary-table th,
+.section--annee .summary-table td {
+  border-color: var(--color-annee-text);
+}
+
+.section--annee .summary-table thead {
+  background-color: rgba(124, 58, 237, 0.1);
+}
+
+.section--annee .summary-table a {
+  color: var(--color-annee-accent);
+}
+
+/* --- Annee block --- */
+.annee-block {
+  margin-bottom: 0;
+}
+
+.annee-block__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+.annee-block__subtitle {
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+}
+
+.annee-block__tarif {
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+  border-left: 4px solid var(--color-annee-accent);
+  padding-left: 0.8rem;
+}
+
+.annee-block__section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 50rem) {
+  .annee-block__section {
+    grid-template-columns: 280px 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.annee-block__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 3px dashed rgba(59, 7, 100, 0.2);
+  background-color: rgba(59, 7, 100, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.annee-block__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.annee-block__heading {
+  font-family: var(--font-cursive);
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.annee-block__values {
+  padding-left: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.annee-block__values li {
+  list-style: "✦ ";
+  margin-bottom: 0.3rem;
+  font-size: 1.05rem;
+}
+
+/* --- Séparateur année --- */
+.annee__separator {
+  border: none;
+  border-top: 1px solid rgba(59, 7, 100, 0.15);
+  margin: 3rem 0;
+}
+
+@media (min-width: 50rem) {
+  .annee__separator {
+    margin: 4rem 0;
+  }
+}
+
+/* --- Grille des saisons --- */
+.saisons-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 40rem) {
+  .saisons-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.saison {
+  border-left: 4px solid var(--color-annee-accent);
+  padding-left: 1.2rem;
+}
+
+.saison__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 3px dashed rgba(59, 7, 100, 0.2);
+  background-color: rgba(59, 7, 100, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.saison__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.saison__title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.saison__months {
+  font-size: 0.9rem;
+  opacity: 0.65;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+.saison p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+/* --- Projets pédagogiques --- */
+.projets-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 50rem) {
+  .projets-grid {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-/* --- Single Activity Card --- */
-.activity-card {
-  padding: 1.5rem 1.8rem;
-  border-bottom: 2px solid var(--color-programme-text);
-  transition: background-color var(--transition-fast);
+.projet {
+  border-top: 4px solid var(--color-annee-accent);
+  padding-top: 1rem;
 }
 
-.activity-card:last-child {
-  border-bottom: none;
+.projet__title {
+  font-family: var(--font-cursive);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
 }
 
-@media (min-width: 50rem) {
-  .activity-card {
-    border-bottom: none;
-    border-right: 2px solid var(--color-programme-text);
-  }
-
-  .activity-card:last-child {
-    border-right: none;
-  }
-}
-
-.activity-card__title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
-  font-weight: 400;
-  margin-bottom: 0.3rem;
-}
-
-.activity-card__date {
-  font-size: 1.05rem;
-  font-weight: 600;
-  padding: 0.3rem 0 0.6rem;
-}
-
-.activity-card__description {
-  margin-bottom: 0.8rem;
+.projet p {
+  font-size: 0.95rem;
   line-height: 1.7;
 }
 
-.activity-card__list {
-  padding-left: 1.1rem;
-  margin-bottom: 0.8rem;
-}
-
-.activity-card__list li {
-  margin-bottom: 0.3rem;
-  list-style: disc;
-}
-
-.activity-card__price {
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-top: 0.8rem;
-  padding-top: 0.6rem;
-  border-top: 1px dashed currentColor;
-}
-
-.activity-card__price span {
-  font-weight: 400;
-  font-size: 0.95rem;
-}
-
-.activity-card__note {
-  font-size: 0.95rem;
-  font-style: italic;
-  opacity: 0.8;
-  margin-top: 0.3rem;
-}
-
-/* --- Image Placeholder for user photos --- */
-.activity-card__image {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  margin-bottom: 1rem;
-  background-color: rgba(0, 0, 0, 0.06);
-  border: 2px dashed rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(0, 0, 0, 0.3);
-  font-size: 0.9rem;
-}
-
-.activity-card__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
-}
-
 /* ============================================
-   INSCRIPTION / INFO BANNER
-   ============================================ */
-.section--inscription {
-  background-color: var(--color-ferme-bg);
-  color: var(--color-ferme-text);
-  border-bottom: 2px solid var(--color-ferme-text);
-}
-
-.inscription-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  border: 2px solid var(--color-ferme-text);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  overflow: hidden;
-}
-
-@media (min-width: 50rem) {
-  .inscription-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.info-box {
-  padding: 1.5rem 1.8rem;
-}
-
-.info-box + .info-box {
-  border-top: 2px solid var(--color-ferme-text);
-}
-
-@media (min-width: 50rem) {
-  .info-box + .info-box {
-    border-top: none;
-    border-left: 2px solid var(--color-ferme-text);
-  }
-}
-
-.info-box__title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.3rem, 3vw, 1.8rem);
-  font-weight: 400;
-  margin-bottom: 0.6rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.info-box__title svg {
-  width: 24px;
-  height: 24px;
-  fill: currentColor;
-}
-
-.info-box ul {
-  padding-left: 1.1rem;
-}
-
-.info-box li {
-  margin-bottom: 0.3rem;
-  list-style: disc;
-}
-
-/* ============================================
-   FERME / PRODUCTS SECTION
-   ============================================ */
-.section--ferme {
-  background-color: var(--color-ferme-bg);
-  color: var(--color-ferme-text);
-  border-bottom: 2px solid var(--color-ferme-text);
-}
-
-.ferme-intro {
-  max-width: 42rem;
-  margin: 0 auto 1.5rem;
-  text-align: center;
-  font-size: 1.05rem;
-}
-
-.products-table {
-  margin: 0 auto;
-  border-collapse: separate;
-  border-spacing: 0;
-  border: 2px solid var(--color-ferme-text);
-  box-shadow: var(--shadow);
-  width: 100%;
-  max-width: 40rem;
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-
-.products-table thead {
-  background-color: var(--color-ferme-header);
-}
-
-.products-table th,
-.products-table td {
-  padding: 0.6rem 1rem;
-  text-align: left;
-}
-
-.products-table th {
-  font-weight: 700;
-}
-
-.products-table td {
-  border-top: 1px solid rgba(80, 7, 36, 0.12);
-}
-
-.products-table tbody tr:nth-child(even) {
-  background-color: var(--color-ferme-stripe);
-}
-
-/* ============================================
-   CONTACT SECTION
+   CONTACT
    ============================================ */
 .section--contact {
   background-color: var(--color-contact-bg);
@@ -752,7 +844,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 .contact-link span {
@@ -792,7 +884,7 @@ img {
   width: 100%;
   border: none;
   display: block;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
 }
 
 /* ============================================
@@ -801,37 +893,35 @@ img {
 .site-footer {
   background-color: var(--color-footer-bg);
   color: var(--color-footer-text);
-  border-top: 2px solid var(--color-footer-border);
+  border-top: 3px solid var(--color-footer-border);
   text-align: center;
-  padding: 1rem;
-  font-size: 0.95rem;
-}
-
-.site-footer a {
-  color: var(--color-footer-text);
-  text-decoration: underline;
-  text-underline-offset: 2px;
+  padding: 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 /* ============================================
    RESPONSIVE FINE-TUNING
    ============================================ */
-@media (max-width: 600px) {
-  .hero__image {
-    object-position: 75% center;
-  }
-}
-
 @media (max-width: 480px) {
   .section {
-    padding: 2rem 0;
+    padding: 2.5rem 0;
   }
 
-  .activity-card {
-    padding: 1.2rem;
+  .section__inner {
+    padding: 0 1rem;
   }
 
   .contact-grid {
     flex-direction: column;
+  }
+
+  .summary-table {
+    font-size: 0.85rem;
+  }
+
+  .summary-table th,
+  .summary-table td {
+    padding: 0.5rem 0.6rem;
   }
 }
