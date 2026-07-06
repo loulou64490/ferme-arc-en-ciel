@@ -1,44 +1,46 @@
 /* ============================================
-   FERME ARC-EN-CIEL — Brutaliste Coloré
+   FERME ARC-EN-CIEL — Brutaliste Pastel
    ============================================ */
 
 /* --- Custom Properties --- */
 :root {
-  /* Colors */
-  --color-primary: #1a1a1a;
+  /* Text & borders */
+  --color-text: #2c2416;
+  --color-accent: #5a7a50;
+
+  /* Section 1 — La ferme c'est… (jaune chaud) */
+  --color-sub-a: #fef6d4;
+  --color-sub-a2: #fef6d4;
+  --color-sub-b: #fcf0c5;
+  --color-sub-c: #fef3ca;
+  --color-sub-d: #faeabb;
+
+  /* Section 2 — À propos (lavande) */
+  --color-sub-e: #ede5f8;
+  --color-sub-f: #e4daf2;
+
+  /* Saisons */
+  --color-automne: #f2e6cc;
+  --color-hiver: #dfe8f3;
+  --color-printemps: #dff0da;
+  --color-ete: #f8f0d0;
+
+  /* Special */
   --color-hero-bg: #3a5a2c;
-
-  --color-programme-bg: #fef9c3;
-  --color-programme-text: #422006;
-  --color-programme-accent: #f59e0b;
-
-  --color-sejours-bg: #fffbeb;
-  --color-sejours-text: #422006;
-
-  --color-annee-bg: #ede9fe;
-  --color-annee-text: #3b0764;
-  --color-annee-accent: #7c3aed;
-
-  --color-contact-bg: #f0fdfa;
-  --color-contact-text: #042f2e;
-
-  --color-footer-bg: #cdebb0;
-  --color-footer-text: #264e00;
-  --color-footer-border: #264e00;
-
-  --color-header-bg: rgba(255, 255, 255, 0.34);
+  --color-header-bg: rgba(250, 246, 240, 0.92);
+  --color-contact-bg: #d8f0e5;
+  --color-footer-bg: #e8ede2;
 
   /* Typography */
   --font-body: 'Bricolage Grotesque', system-ui, sans-serif;
-  --font-cursive: 'Dancing Script', cursive;
-  --font-heading: 'Syne', sans-serif;
+  --font-accent: 'Providence Sans Offc W00 Bold', sans-serif;
 
   /* Layout */
   --max-width: 72rem;
   --blur: 8px;
 
   /* Borders — brutaliste */
-  --border: 3px solid var(--color-primary);
+  --border: 3px solid var(--color-text);
 }
 
 /* --- Reset & Base --- */
@@ -60,9 +62,11 @@ body {
   font-family: var(--font-body);
   font-size: 1.05rem;
   line-height: 1.7;
-  color: var(--color-primary);
+  color: var(--color-text);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 a {
@@ -100,13 +104,14 @@ p + p {
   width: 100%;
   background-color: transparent;
   backdrop-filter: none;
-  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 .site-header.scrolled {
-  background-color: var(--color-header-bg);
-  backdrop-filter: blur(var(--blur));
-  border-bottom: 3px solid var(--color-primary);
+  background-color: rgba(250, 246, 240, 0.65);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 3px solid var(--color-text);
 }
 
 .site-header__inner {
@@ -120,7 +125,7 @@ p + p {
 }
 
 .site-header__logo {
-  font-family: var(--font-cursive);
+  font-family: var(--font-accent);
   font-size: 1.8rem;
   font-weight: 700;
   padding: 0.6rem 0;
@@ -149,7 +154,7 @@ p + p {
 }
 
 .nav-toggle-label .navicon {
-  background: var(--color-primary);
+  background: var(--color-text);
   display: block;
   height: 3px;
   width: 23px;
@@ -159,7 +164,7 @@ p + p {
 
 .nav-toggle-label .navicon::before,
 .nav-toggle-label .navicon::after {
-  background: var(--color-primary);
+  background: var(--color-text);
   content: '';
   display: block;
   height: 100%;
@@ -177,7 +182,7 @@ p + p {
 }
 
 .nav-toggle:checked ~ .main-nav {
-  max-height: 16rem;
+  max-height: 30rem;
 }
 
 .nav-toggle:checked ~ .nav-toggle-label .navicon {
@@ -217,6 +222,24 @@ p + p {
   opacity: 1;
 }
 
+/* --- Dropdown nav (mobile: always expanded) --- */
+.nav-dropdown__menu {
+  padding-left: 1.5rem;
+  padding-bottom: 0.3rem;
+}
+
+.nav-dropdown__menu li {
+  margin-bottom: 0.1rem;
+}
+
+.nav-dropdown__menu a {
+  display: block;
+  padding: 0.4rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+/* --- Desktop nav --- */
 @media (min-width: 55em) {
   .site-header__inner {
     flex-wrap: nowrap;
@@ -240,37 +263,64 @@ p + p {
     padding-bottom: 0;
   }
 
-  .main-nav__list li {
+  .main-nav__list > li {
     padding: 1.5rem 0.7rem 1.3rem;
+    position: relative;
   }
 
   .main-nav__link {
     padding: 0;
     display: inline-block;
     font-size: 1.05rem;
-    position: relative;
-  }
-
-  .main-nav__link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: currentColor;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .main-nav__link:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 3px;
   }
 
   .main-nav__link:hover {
     opacity: 1;
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 2px;
+  }
+
+  /* Dropdown: hidden by default on desktop */
+  .nav-dropdown__menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(250, 246, 240, 0.72);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border: 2px solid var(--color-text);
+    padding: 0.5rem 0;
+    padding-left: 0;
+    min-width: 240px;
+    z-index: 101;
+  }
+
+  .nav-dropdown:hover .nav-dropdown__menu,
+  .nav-dropdown:focus-within .nav-dropdown__menu {
+    display: block;
+  }
+
+  .nav-dropdown__menu li {
+    margin-bottom: 0;
+  }
+
+  .nav-dropdown__menu a {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 3px;
+  }
+
+  .nav-dropdown__menu a:hover {
+    opacity: 1;
+    text-decoration-color: currentColor;
+    text-decoration-thickness: 2px;
   }
 }
 
@@ -320,56 +370,68 @@ p + p {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 3rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 2rem;
 }
 
 .hero__title {
-  font-family: var(--font-cursive);
-  font-size: clamp(2.4rem, 7vw, 5rem);
+  font-family: var(--font-accent);
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
   font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 0.3rem;
+  line-height: 1.15;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+  margin-bottom: 1.5rem;
 }
 
-.hero__subtitle {
-  font-family: var(--font-body);
-  font-size: clamp(0.95rem, 2vw, 1.25rem);
-  font-weight: 400;
-  opacity: 0.9;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+/* --- Hero 2×2 grid --- */
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 44rem;
 }
 
-.hero__cta {
-  display: inline-block;
-  padding: 0.75rem 1.8rem;
-  font-size: 1rem;
+.hero__grid-item {
+  padding: 1rem 1.2rem;
+  font-family: var(--font-accent);
+  font-size: clamp(0.95rem, 2.2vw, 1.35rem);
   font-weight: 700;
-  font-family: var(--font-body);
-  color: var(--color-primary);
-  background-color: var(--color-programme-bg);
-  border: 3px solid var(--color-primary);
-  transition: background-color 0.2s ease;
-  white-space: nowrap;
-  flex-shrink: 0;
+  line-height: 1.3;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
 
-.hero__cta:hover {
+.hero__grid-item:hover {
   opacity: 1;
-  background-color: var(--color-programme-accent);
-  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+}
+
+/* Inner cross: right border on left column, bottom border on top row */
+.hero__grid-item:nth-child(odd) {
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.hero__grid-item:nth-child(1),
+.hero__grid-item:nth-child(2) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 480px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__grid-item:nth-child(odd) {
+    border-right: none;
+  }
+
+  .hero__grid-item:nth-child(1),
+  .hero__grid-item:nth-child(2),
+  .hero__grid-item:nth-child(3) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
 }
 
 @media (max-width: 600px) {
-  .hero__content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.2rem;
-  }
-
   .hero__image {
     object-position: 75% center;
   }
@@ -382,60 +444,221 @@ p + p {
 }
 
 /* ============================================
-   SECTIONS — Common
+   SUBSECTIONS — Common
    ============================================ */
-.section {
+.subsection {
   padding: 4rem 0;
   scroll-margin-top: 3.5rem;
 }
 
-.section__inner {
+.subsection__inner {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
-.section__title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
-  font-weight: 800;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+/* Subsection backgrounds */
+.subsection--a  { background-color: var(--color-sub-a); }
+.subsection--a2 { background-color: var(--color-sub-a2); }
+.subsection--b  { background-color: var(--color-sub-b); }
+.subsection--c  { background-color: var(--color-sub-c); }
+.subsection--d  { background-color: var(--color-sub-d); }
+.subsection--e  { background-color: var(--color-sub-e); }
+.subsection--f  { background-color: var(--color-sub-f); }
+.subsection--contact { background-color: var(--color-contact-bg); padding-bottom: 0; }
+
+/* TOC intro subsection — removed, now in hero */
+
+/* --- Section separators (thick black) --- */
+.subsection--e {
+  border-top: 3px solid var(--color-text);
+}
+
+.subsection--contact {
+  border-top: 3px solid var(--color-text);
+}
+
+/* --- Subsection separators (thin) --- */
+.subsection--a2 {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.subsection--b {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.subsection--c {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.subsection--d {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.subsection--f {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 @media (min-width: 55em) {
-  .section__inner {
+  .subsection__inner {
     padding: 0 2rem;
   }
 
-  .section {
+  .subsection {
     padding: 5rem 0;
+  }
+
+  .subsection--contact {
+    padding-bottom: 0;
   }
 }
 
 /* ============================================
-   PROGRAMME ÉTÉ — Tableau résumé + Infos
+   TITLES
    ============================================ */
-.section--programme {
-  background-color: var(--color-programme-bg);
-  color: var(--color-programme-text);
-  border-top: 3px solid var(--color-programme-text);
-  border-bottom: 3px solid var(--color-programme-text);
+.section__title {
+  font-family: var(--font-accent);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
 }
 
-/* --- Table wrapper for mobile scroll --- */
-.table-wrapper {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
+.block__title {
+  font-family: var(--font-accent);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+  scroll-margin-top: 5rem;
+}
+
+.block__heading {
+  font-family: var(--font-accent);
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+/* Simple label (not a title) */
+.block__label {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+/* ============================================
+   IMAGE SLOTS
+   ============================================ */
+.img-slot {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: 3px dashed rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.img-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-slot__placeholder {
+  color: rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+/* Saison image slot — horizontal banner */
+.img-slot--saison {
+  aspect-ratio: 16 / 7;
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   ILLUSTRATED BLOCKS (text + image side by side)
+   ============================================ */
+.block__section--illustrated {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (min-width: 50rem) {
+  .block__section--illustrated {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .block__section--reverse {
+    grid-template-columns: 1fr 1.3fr;
+  }
+
+  .block__section--reverse > .img-slot {
+    order: -1;
+  }
+}
+
+/* ============================================
+   CONTENT BLOCKS
+   ============================================ */
+.block__section {
   margin-bottom: 2.5rem;
 }
 
-/* --- Summary Table (brutaliste) --- */
+.block__section:last-of-type {
+  margin-bottom: 2rem;
+}
+
+/* ============================================
+   INFO BOX
+   ============================================ */
+.info-box {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.2rem 1.5rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-left: 4px solid var(--color-accent);
+}
+
+.info-box__title {
+  font-family: var(--font-accent);
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  letter-spacing: 0.02em;
+  margin-bottom: 0.6rem;
+}
+
+.info-box ul {
+  padding-left: 1.2rem;
+}
+
+.info-box li {
+  list-style: "→ ";
+  margin-bottom: 0.3rem;
+}
+
+/* ============================================
+   TABLES — Brutaliste
+   ============================================ */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+}
+
 .summary-table {
   width: 100%;
   border-collapse: collapse;
-  border: 3px solid currentColor;
+  border: 3px solid var(--color-text);
   font-size: 0.95rem;
 }
 
@@ -443,23 +666,23 @@ p + p {
 .summary-table td {
   padding: 0.75rem 1rem;
   text-align: left;
-  border: 2px solid currentColor;
+  border: 2px solid var(--color-text);
 }
 
 .summary-table thead {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.06);
 }
 
 .summary-table th {
-  font-family: var(--font-heading);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: 0.9rem;
-  text-transform: uppercase;
+
   letter-spacing: 0.04em;
 }
 
 .summary-table tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(0, 0, 0, 0.03);
 }
 
 .summary-table a {
@@ -473,259 +696,151 @@ p + p {
   text-decoration-thickness: 2px;
 }
 
-/* --- Infos Pratiques --- */
-.infos-pratiques {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: 2px dashed var(--color-programme-text);
-}
-
-.infos-pratiques__title {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  margin-bottom: 0.8rem;
-}
-
-.infos-pratiques__list {
-  padding-left: 1.2rem;
-}
-
-.infos-pratiques__list li {
-  list-style: "→ ";
-  margin-bottom: 0.4rem;
+/* ============================================
+   TARIF NOTE
+   ============================================ */
+.tarif-note {
+  margin-top: 1.5rem;
   font-size: 1.05rem;
+  border-left: 4px solid var(--color-accent);
+  padding-left: 0.8rem;
 }
 
 /* ============================================
-   DÉTAILS DES SÉJOURS
+   VALUES LIST
    ============================================ */
-.section--sejours {
-  background-color: var(--color-sejours-bg);
-  color: var(--color-sejours-text);
-  border-bottom: 3px solid var(--color-sejours-text);
+.values-list {
+  padding-left: 1.2rem;
+  margin-bottom: 1.5rem;
+  columns: 2;
+  column-gap: 2rem;
 }
 
-/* --- Single séjour block --- */
+.values-list li {
+  list-style: "✦ ";
+  margin-bottom: 0.4rem;
+  font-size: 1.05rem;
+  break-inside: avoid;
+}
+
+@media (max-width: 600px) {
+  .values-list {
+    columns: 1;
+  }
+}
+
+/* ============================================
+   SÉJOURS — Détails (avec images alternées)
+   ============================================ */
+.sejours-details {
+  margin-top: 3rem;
+}
+
 .sejour {
+  padding-top: 2rem;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  scroll-margin-top: 5rem;
+}
+
+.sejour:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* Illustrated séjour layout */
+.sejour--illustrated {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: 1.5rem;
   align-items: start;
 }
 
 @media (min-width: 50rem) {
-  .sejour {
-    grid-template-columns: 1fr 1.3fr;
-    gap: 3rem;
+  .sejour--illustrated {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 2.5rem;
   }
 
   .sejour--reverse {
-    grid-template-columns: 1.3fr 1fr;
+    grid-template-columns: 1fr 1.3fr;
   }
 
-  .sejour--reverse .sejour__image {
-    order: 2;
-  }
-
-  .sejour--reverse .sejour__content {
-    order: 1;
+  .sejour--reverse > .img-slot {
+    order: -1;
   }
 }
 
-/* --- Image placeholder --- */
-.sejour__image {
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border: 3px dashed rgba(0, 0, 0, 0.2);
-  background-color: rgba(0, 0, 0, 0.03);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.sejour__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.sejour__image-placeholder {
-  color: rgba(0, 0, 0, 0.25);
-  font-size: 1rem;
-  font-weight: 500;
-  pointer-events: none;
-}
-
-/* --- Séjour content --- */
 .sejour__title {
-  font-family: var(--font-cursive);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-family: var(--font-accent);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
   font-weight: 700;
   margin-bottom: 0.4rem;
 }
 
 .sejour__meta {
   font-size: 0.95rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
   line-height: 1.5;
-  border-left: 4px solid var(--color-programme-accent);
+  border-left: 4px solid var(--color-accent);
   padding-left: 0.8rem;
 }
 
-.sejour__text {
+.sejour__note {
+  font-size: 0.9rem;
+  font-style: italic;
+  opacity: 0.7;
+  margin-bottom: 0.8rem;
+}
+
+.sejour__text p,
+.sejour > p {
   font-size: 1.05rem;
   line-height: 1.75;
 }
 
-.sejour__note {
-  margin-top: 1rem;
-  font-size: 0.9rem;
-  font-style: italic;
-  opacity: 0.7;
-}
-
-/* --- Séparateur --- */
-.sejour__separator {
-  border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin: 3rem 0;
-}
-
-@media (min-width: 50rem) {
-  .sejour__separator {
-    margin: 4rem 0;
-  }
-}
-
 /* ============================================
-   PROGRAMME À L'ANNÉE (violet)
+   THEMES — Activités pédagogiques
    ============================================ */
-.section--annee {
-  background-color: var(--color-annee-bg);
-  color: var(--color-annee-text);
-  border-bottom: 3px solid var(--color-annee-text);
-}
-
-.section--annee .section__title {
-  color: var(--color-annee-text);
-}
-
-.section--annee .summary-table {
-  border-color: var(--color-annee-text);
-}
-
-.section--annee .summary-table th,
-.section--annee .summary-table td {
-  border-color: var(--color-annee-text);
-}
-
-.section--annee .summary-table thead {
-  background-color: rgba(124, 58, 237, 0.1);
-}
-
-.section--annee .summary-table a {
-  color: var(--color-annee-accent);
-}
-
-/* --- Annee block --- */
-.annee-block {
-  margin-bottom: 0;
-}
-
-.annee-block__title {
-  font-family: var(--font-heading);
-  font-size: clamp(1.4rem, 3vw, 2rem);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -0.01em;
-  margin-bottom: 1rem;
-}
-
-.annee-block__subtitle {
-  font-size: 1.05rem;
-  margin-bottom: 1.5rem;
-  opacity: 0.8;
-}
-
-.annee-block__tarif {
-  margin-top: 1.5rem;
-  font-size: 1.05rem;
-  border-left: 4px solid var(--color-annee-accent);
-  padding-left: 0.8rem;
-}
-
-.annee-block__section {
+.themes-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
-  margin-top: 2rem;
-  align-items: start;
+  margin-top: 1.5rem;
 }
 
 @media (min-width: 50rem) {
-  .annee-block__section {
-    grid-template-columns: 280px 1fr;
-    gap: 2.5rem;
+  .themes-grid {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
-.annee-block__image {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  border: 3px dashed rgba(59, 7, 100, 0.2);
-  background-color: rgba(59, 7, 100, 0.03);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+.theme-card {
+  background: rgba(0, 0, 0, 0.03);
+  border: 2px solid rgba(0, 0, 0, 0.12);
+  padding: 1.5rem;
 }
 
-.annee-block__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.annee-block__heading {
-  font-family: var(--font-cursive);
-  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+.theme-card__title {
+  font-family: var(--font-accent);
+  font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 0.6rem;
 }
 
-.annee-block__values {
-  padding-left: 1.2rem;
-  margin-bottom: 1.2rem;
+.theme-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
-.annee-block__values li {
-  list-style: "✦ ";
-  margin-bottom: 0.3rem;
-  font-size: 1.05rem;
-}
-
-/* --- Séparateur année --- */
-.annee__separator {
-  border: none;
-  border-top: 1px solid rgba(59, 7, 100, 0.15);
-  margin: 3rem 0;
-}
-
-@media (min-width: 50rem) {
-  .annee__separator {
-    margin: 4rem 0;
-  }
-}
-
-/* --- Grille des saisons --- */
+/* ============================================
+   SAISONS — Blocs colorés
+   ============================================ */
 .saisons-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.5rem;
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
@@ -736,33 +851,20 @@ p + p {
 }
 
 .saison {
-  border-left: 4px solid var(--color-annee-accent);
-  padding-left: 1.2rem;
+  padding: 1.8rem;
+  border: 2px solid rgba(0, 0, 0, 0.12);
 }
 
-.saison__image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: 3px dashed rgba(59, 7, 100, 0.2);
-  background-color: rgba(59, 7, 100, 0.03);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
-
-.saison__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+.saison--automne { background-color: var(--color-automne); }
+.saison--hiver   { background-color: var(--color-hiver); }
+.saison--printemps { background-color: var(--color-printemps); }
+.saison--ete     { background-color: var(--color-ete); }
 
 .saison__title {
-  font-family: var(--font-heading);
+  font-family: var(--font-accent);
   font-size: 1.4rem;
   font-weight: 700;
-  text-transform: uppercase;
+
   margin-bottom: 0.2rem;
 }
 
@@ -774,50 +876,25 @@ p + p {
 }
 
 .saison p {
-  font-size: 0.98rem;
-  line-height: 1.7;
-}
-
-/* --- Projets pédagogiques --- */
-.projets-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-@media (min-width: 50rem) {
-  .projets-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-.projet {
-  border-top: 4px solid var(--color-annee-accent);
-  padding-top: 1rem;
-}
-
-.projet__title {
-  font-family: var(--font-cursive);
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 0.6rem;
-}
-
-.projet p {
   font-size: 0.95rem;
   line-height: 1.7;
 }
 
 /* ============================================
-   CONTACT
+   PROSE — Long text block
    ============================================ */
-.section--contact {
-  background-color: var(--color-contact-bg);
-  color: var(--color-contact-text);
-  padding-bottom: 0;
+.prose {
+  max-width: 52rem;
 }
 
+.prose p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ============================================
+   CONTACT
+   ============================================ */
 .contact-grid {
   display: flex;
   flex-wrap: wrap;
@@ -848,29 +925,18 @@ p + p {
 }
 
 .contact-link span {
-  position: relative;
-}
-
-.contact-link span::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease-in-out;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
 }
 
 .contact-link:hover {
   opacity: 1;
 }
 
-.contact-link:hover span::after {
-  transform: scaleX(1);
-  transform-origin: left;
+.contact-link:hover span {
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
 }
 
 .contact-link svg {
@@ -882,7 +948,9 @@ p + p {
 
 .map-embed {
   width: 100%;
+  height: 400px;
   border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
   display: block;
   margin-top: 2.5rem;
 }
@@ -892,8 +960,8 @@ p + p {
    ============================================ */
 .site-footer {
   background-color: var(--color-footer-bg);
-  color: var(--color-footer-text);
-  border-top: 3px solid var(--color-footer-border);
+  color: var(--color-text);
+  border-top: 3px solid var(--color-text);
   text-align: center;
   padding: 1.2rem;
   font-size: 0.9rem;
@@ -904,11 +972,15 @@ p + p {
    RESPONSIVE FINE-TUNING
    ============================================ */
 @media (max-width: 480px) {
-  .section {
+  .subsection {
     padding: 2.5rem 0;
   }
 
-  .section__inner {
+  .subsection--a {
+    padding-bottom: 0;
+  }
+
+  .subsection__inner {
     padding: 0 1rem;
   }
 
@@ -923,5 +995,13 @@ p + p {
   .summary-table th,
   .summary-table td {
     padding: 0.5rem 0.6rem;
+  }
+
+  .saison {
+    padding: 1.2rem;
+  }
+
+  .theme-card {
+    padding: 1.2rem;
   }
 }

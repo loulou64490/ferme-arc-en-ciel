@@ -5,10 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Ferme Arc-en-Ciel à Accous — Séjours nature pour enfants de 6 à 16 ans. Programme été 2026 et activités à l'année au cœur des Pyrénées.">
+    content="Ferme Arc-en-Ciel à Accous — Séjours nature pour enfants de 6 à 16 ans et accueil à la ferme. Programme été 2026 et activités à l'année au cœur des Pyrénées.">
   <meta name="keywords"
     content="ferme, nature, enfants, séjour, aventure, montagne, pyrénées, accous, vacances, été 2026, colonie, randonnée, vélo">
-  <title>Ferme Arc-en-Ciel — Séjours nature pour enfants</title>
+  <title>Ferme Arc-en-Ciel</title>
 
   <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -19,8 +19,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Dancing+Script:wght@400..700&family=Syne:wght@400..800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
     rel="stylesheet">
+  <link href="https://db.onlinewebfonts.com/c/f36a026fd7fae583b3e2bb8a56584207?family=Providence+Sans+Offc+W00+Bold"
+    rel="stylesheet" type="text/css">
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/style.css">
@@ -39,8 +41,22 @@
 
       <nav class="main-nav">
         <ul class="main-nav__list">
-          <li><a href="#programme" class="main-nav__link">Programme été</a></li>
-          <li><a href="#annee" class="main-nav__link">Programme à l'année</a></li>
+          <li class="nav-dropdown">
+            <a href="#programme" class="main-nav__link nav-dropdown__toggle">La ferme c'est…</a>
+            <ul class="nav-dropdown__menu">
+              <li><a href="#groupes-reguliers">…des groupes réguliers</a></li>
+              <li><a href="#accueil-personnalise">…des temps d'accueil personnalisé</a></li>
+              <li><a href="#sejours">…des séjours vacances</a></li>
+              <li><a href="#activites-pedagogiques">…des activités pédagogiques</a></li>
+            </ul>
+          </li>
+          <li class="nav-dropdown">
+            <a href="#a-propos" class="main-nav__link nav-dropdown__toggle">À propos</a>
+            <ul class="nav-dropdown__menu">
+              <li><a href="#annee-ferme">Une année à la ferme</a></li>
+              <li><a href="#projet-pedagogique">Projet pédagogique</a></li>
+            </ul>
+          </li>
           <li><a href="#contact" class="main-nav__link">Contact</a></li>
         </ul>
       </nav>
@@ -52,21 +68,164 @@
     <section class="hero" id="accueil">
       <img class="hero__image" src="assets/home.jpg" alt="Enfants dans les montagnes des Pyrénées">
       <div class="hero__overlay"></div>
-      <div class="hero__content">
-        <div class="hero__text">
-          <h1 class="hero__title">Ferme Arc-en-Ciel</h1>
-          <p class="hero__subtitle">Séjours nature pour enfants au cœur des Pyrénées — Été 2026</p>
+      <div class="hero__content" id="programme">
+        <h1 class="hero__title">La ferme arc-en-ciel c'est…</h1>
+        <div class="hero__grid">
+          <a href="#groupes-reguliers" class="hero__grid-item">…des groupes réguliers au fil de l'année</a>
+          <a href="#accueil-personnalise" class="hero__grid-item">…des temps d'accueil personnalisé</a>
+          <a href="#sejours" class="hero__grid-item">…des séjours pendant les vacances scolaires</a>
+          <a href="#activites-pedagogiques" class="hero__grid-item">…des activités pédagogiques</a>
         </div>
-        <a href="#programme" class="hero__cta">Découvrir le programme</a>
       </div>
     </section>
 
-    <!-- ========== PROGRAMME ÉTÉ 2026 ========== -->
-    <section class="section section--programme" id="programme">
-      <div class="section__inner">
-        <h2 class="section__title">Les séjours d'été 2026</h2>
+    <!-- Sub 1.1 : Groupes réguliers au fil de l'année -->
+    <section class="subsection subsection--a2" id="groupes-reguliers">
+      <div class="subsection__inner">
+        <h3 class="block__title">…des groupes réguliers au fil de l'année</h3>
 
-        <!-- Tableau résumé -->
+        <div class="block__section block__section--illustrated">
+          <div>
+            <h4 class="block__heading">Pour découvrir la vie à la ferme au fil des saisons</h4>
+            <p>En participant aux soins quotidiens&nbsp;: nourrir, traire, amener au pré, etc.
+              En rencontrant les animaux régulièrement on apprend à les connaître, à créer un lien de confiance et alors
+              une complicité profonde s'installe.</p>
+            <p>À la ferme Arc-en-ciel, brebis, chèvres, vaches, ânes, poules, sont habitués à cette rencontre et se
+              réjouissent de ces temps d'échange dans la douceur et la bienveillance.</p>
+          </div>
+          <div class="img-slot">
+            <!-- Remplacez par : <img src="assets/groupes-saisons.webp" alt="Soins aux animaux" loading="lazy"> -->
+            <span class="img-slot__placeholder">📷</span>
+          </div>
+        </div>
+
+        <div class="block__section block__section--illustrated block__section--reverse">
+          <div>
+            <h4 class="block__heading">Pour vivre une expérience totale avec les éléments</h4>
+            <p>On touche, on sent, on joue, on marche, on contemple, on prend le temps. À travers de multiples activités
+              dans les bois, sur les chemins&nbsp;: chasse aux trésors, jeux d'exploration, avec tous nos sens, jeux de
+              piste, affût, observation botanique, construction cabane, création land'art et tous jeux libres laissant
+              place à l'imagination et à la joie&nbsp;!</p>
+          </div>
+          <div class="img-slot">
+            <!-- Remplacez par : <img src="assets/groupes-elements.webp" alt="Jeux en pleine nature" loading="lazy"> -->
+            <span class="img-slot__placeholder">📷</span>
+          </div>
+        </div>
+
+        <div class="block__section block__section--illustrated">
+          <div>
+            <h4 class="block__heading">Pour être ensemble</h4>
+            <p>Se rencontrer, faire partie d'un groupe soudé par des liens de solidarité, de respect, d'entraide, de
+              partage et d'amitié.</p>
+            <p>Un groupe d'explorateurs de la vie qui grandissent en se soutenant, en coopérant, en se nourrissant de la
+              différence et de la reconnaissance des valeurs uniques de chacun.</p>
+            <p>Pour maintenir ce lien précieux, nous jouerons, nous organiserons des temps de paroles et d'écoute sans
+              jugement, nous utiliserons les outils de la communication non violente et nous créons la charte du vivre
+              ensemble dans la bienveillance.</p>
+            <p>Nous serons alors capables de rêver puis réaliser des grands projets tous ensemble&nbsp;: constructions
+              collectives, aventure en pleine Nature sur plusieurs jours, gestion autonome d'une sortie, etc. Et toute
+              autre cocréation naissant de cette force et ce pouvoir immense que crée le partage.</p>
+          </div>
+          <div class="img-slot">
+            <!-- Remplacez par : <img src="assets/groupes-ensemble.webp" alt="Groupe d'enfants" loading="lazy"> -->
+            <span class="img-slot__placeholder">📷</span>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h4 class="info-box__title">Information</h4>
+          <p>Les activités de chaque journée ou séjours de rencontre à la ferme sont adaptées aux âges, aux capacités
+            physiques de chacun, aux saisons et à la météo du jour.</p>
+        </div>
+
+        <div class="table-wrapper">
+          <table class="summary-table">
+            <thead>
+              <tr>
+                <th>Âge</th>
+                <th>Groupe</th>
+                <th>Fréquence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>6 / 9 ans</td>
+                <td>Les Explorateurs de la Nature</td>
+                <td>2 mercredis / mois</td>
+              </tr>
+              <tr>
+                <td>9 / 12 ans</td>
+                <td>Le Clan des Aventuriers</td>
+                <td>2 samedis / mois — parfois week-end entier</td>
+              </tr>
+              <tr>
+                <td>12 / 15 ans</td>
+                <td>Aventure Nature</td>
+                <td>1 week-end / mois</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="tarif-note">Groupe de 4 à 6 enfants<br>
+          <strong>Tarifs&nbsp;:</strong> 25&nbsp;€ / journée — 60&nbsp;€ le week-end<br>
+          Repas compris&nbsp;: Bio + Produits de la ferme
+        </p>
+
+      </div>
+    </section>
+
+    <!-- Sub 1.2 : Accueil personnalisé -->
+    <section class="subsection subsection--b" id="accueil-personnalise">
+      <div class="subsection__inner">
+        <h3 class="block__title">…des temps d'accueil personnalisé</h3>
+
+        <div class="block__section block__section--illustrated block__section--reverse">
+          <div>
+            <ul class="values-list">
+              <li>Pour se reconnecter à la vie</li>
+              <li>Pour soigner les blessures</li>
+              <li>Pour reprendre confiance</li>
+              <li>Pour se nourrir de beauté</li>
+              <li>Pour développer ses compétences</li>
+              <li>Pour découvrir ses talents</li>
+              <li>Pour s'aimer et s'accepter tel qu'on est</li>
+            </ul>
+
+            <p>On avance à petits pas, adaptés aux besoins et à l'évolution de chacun. Toute l'attention est portée sur
+              l'être qui chemine, sur sa sensibilité, son émotivité, son ouverture et ses limites.</p>
+            <p>Les pas, c'est lui qui les fait. L'accompagnant est là juste pour sécuriser, motiver. La ferme, les
+              animaux,
+              la terre, les montagnes, le silence ou le chant des oiseaux, le parfum des fleurs, les agneaux blottis
+              contre
+              son cœur&nbsp;: ce sont eux qui œuvreront.</p>
+            <p>Bien sûr, on créera avec nos mains, on transpirera à réaliser ce projet-là, ou un autre qui naîtra, mais
+              toujours s'il faut tendre une oreille ou ouvrir grand les bras, on sera là.</p>
+          </div>
+          <div class="img-slot">
+            <!-- Remplacez par : <img src="assets/accueil-personnalise.webp" alt="Accueil personnalisé" loading="lazy"> -->
+            <span class="img-slot__placeholder">📷</span>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <h4 class="info-box__title">Information</h4>
+          <p>Tout Public&nbsp;: un accompagnement pour tout âge, de la petite enfance à l'âge adulte, soit seul, soit
+            avec un référent.</p>
+          <p>Par demi-journée ou journée entière. Toujours en adaptation.</p>
+          <p>30 à 50&nbsp;€ en fonction du projet et de la fréquence d'accueil.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sub 1.3 : Séjours pendant les vacances scolaires -->
+    <section class="subsection subsection--c" id="sejours">
+      <div class="subsection__inner">
+        <h3 class="block__title">…des séjours pendant les vacances scolaires</h3>
+        <h4 class="block__heading">Programme été 2026</h4>
+
         <div class="table-wrapper">
           <table class="summary-table" id="tableau-sejours">
             <thead>
@@ -86,7 +245,7 @@
               </tr>
               <tr>
                 <td>16 — 17 Juillet</td>
-                <td><a href="#fermier-1">Ma vie de fermier·e</a></td>
+                <td><a href="#fermier">Ma vie de fermier·e</a></td>
                 <td>6-9 ans</td>
                 <td>80&nbsp;€</td>
               </tr>
@@ -116,7 +275,7 @@
               </tr>
               <tr>
                 <td>19 — 20 Août</td>
-                <td><a href="#fermier-2">Ma vie de fermier·e</a></td>
+                <td><a href="#fermier">Ma vie de fermier·e</a></td>
                 <td>6-9 ans</td>
                 <td>80&nbsp;€</td>
               </tr>
@@ -124,346 +283,302 @@
           </table>
         </div>
 
-        <!-- Infos pratiques -->
-        <div class="infos-pratiques" id="infos-pratiques">
-          <h3 class="infos-pratiques__title">Informations pratiques</h3>
-          <ul class="infos-pratiques__list">
-            <li>Les séjours sont limités à <strong>6 enfants</strong></li>
-            <li><strong>Réduction 5&nbsp;%</strong> pour 2 séjours</li>
-            <li><strong>Réduction 10&nbsp;%</strong> pour 3 séjours ou plus</li>
+        <div class="info-box">
+          <h4 class="info-box__title">Information</h4>
+          <ul>
+            <li>Les séjours sont limités à <strong>six enfants</strong>.</li>
+            <li><strong>5&nbsp;%</strong> de réduction pour 2 séjours</li>
+            <li><strong>10&nbsp;%</strong> de réduction pour 3 séjours ou plus</li>
           </ul>
         </div>
+
+        <!-- Détails des séjours (images alternées) -->
+        <div class="sejours-details">
+
+          <article class="sejour sejour--illustrated" id="velo">
+            <div class="sejour__text">
+              <h4 class="sejour__title">Séjour itinérant à vélo</h4>
+              <p class="sejour__meta">Du lundi 6 au samedi 11 juillet — 6 jours · 12 à 16 ans ·
+                <strong>300&nbsp;€</strong>
+              </p>
+              <p class="sejour__note">Camping compris, trajet non compris</p>
+              <p>À vélo le long de l'océan…</p>
+              <p>25 à 30 km par jour à pédaler sur les chemins et les routes aménagées, des baignades dans l'océan, des
+                nuits en camping ou dans la forêt, des repas organisés par l'équipe des cyclistes expérimentés qui vont
+                tous gérer cette année&nbsp;!</p>
+            </div>
+            <div class="img-slot">
+              <!-- <img src="assets/sejour-velo.webp" alt="Séjour itinérant à vélo" loading="lazy"> -->
+              <span class="img-slot__placeholder">📷</span>
+            </div>
+          </article>
+
+          <article class="sejour sejour--illustrated sejour--reverse" id="fermier">
+            <div class="sejour__text">
+              <h4 class="sejour__title">Ma vie de fermier·e</h4>
+              <p class="sejour__meta">Du jeudi 16 au vendredi 17 juillet <em>et</em> du mercredi 19 au jeudi 20 août — 2
+                jours · 6 à 9 ans · <strong>80&nbsp;€</strong></p>
+              <p>Rentre dans la peau d'un fermier, entouré d'animaux bienveillants et généreux en lait et en tendresse.
+                Au
+                milieu d'un jardin rempli de délices à récolter puis à cuisiner, accompagné d'un bon pain fait de tes
+                mains, tu te reposeras le soir le cœur rempli de joie quand tout ton troupeau rassasié et bien soigné
+                s'endormira comblé…</p>
+              <p>Jeux et baignade l'après-midi à l'heure où les bergers font la sieste&nbsp;!</p>
+            </div>
+            <div class="img-slot">
+              <!-- <img src="assets/sejour-fermier.webp" alt="Ma vie de fermier·e" loading="lazy"> -->
+              <span class="img-slot__placeholder">📷</span>
+            </div>
+          </article>
+
+          <article class="sejour sejour--illustrated" id="anes">
+            <div class="sejour__text">
+              <h4 class="sejour__title">À pas d'ânes…</h4>
+              <p class="sejour__meta">Du mardi 21 au jeudi 23 juillet — 3 jours · 9 à 11 ans ·
+                <strong>120&nbsp;€</strong>
+              </p>
+              <p>Imagine une vie sur les chemins, accompagné de deux êtres aux grandes oreilles, courageux, qui t'aident
+                à
+                porter le matériel de campement et qui attendent en retour de recevoir tes caresses et ton amour…</p>
+              <p>Avec un groupe de jeunes aventuriers comme toi, vous partagerez la vie quotidienne&nbsp;: chercher le
+                bois, faire le feu, monter le campement du soir, créer des veillées de rêves et d'histoires sous les
+                étoiles… Voilà les trois jours itinérants qui s'annoncent à toi&nbsp;!</p>
+            </div>
+            <div class="img-slot">
+              <!-- <img src="assets/sejour-anes.webp" alt="Randonnée avec les ânes" loading="lazy"> -->
+              <span class="img-slot__placeholder">📷</span>
+            </div>
+          </article>
+
+          <article class="sejour sejour--illustrated sejour--reverse" id="rando">
+            <div class="sejour__text">
+              <h4 class="sejour__title">Rando montagne</h4>
+              <p class="sejour__meta">Du lundi 27 au vendredi 31 juillet — 5 jours · 12 à 16 ans ·
+                <strong>200&nbsp;€</strong>
+              </p>
+              <p>Mes godillots bien lacés, le sac à dos bien équilibré, je suis prêt à partir en itinérance avec toute
+                l'équipe des vaillants randonneurs aidés des ânes.</p>
+              <p>Que l'aventure commence&nbsp;! Vivre au cœur de la nature, apprendre à s'adapter aux éléments, se
+                repérer
+                sur les cartes et suivre le bon chemin, organiser ensemble la vie quotidienne, le feu, le campement, les
+                jeux et les veillées&nbsp;: une expérience engagée vers l'autonomie et l'entraide.</p>
+            </div>
+            <div class="img-slot">
+              <!-- <img src="assets/sejour-rando.webp" alt="Rando montagne" loading="lazy"> -->
+              <span class="img-slot__placeholder">📷</span>
+            </div>
+          </article>
+
+          <article class="sejour sejour--illustrated" id="mini-colo">
+            <div class="sejour__text">
+              <h4 class="sejour__title">Mini colo à la ferme</h4>
+              <p class="sejour__meta">Du mardi 4 au jeudi 6 août — 3 jours · 9 à 11 ans ·
+                <strong>120&nbsp;€</strong>
+              </p>
+              <p>Imagine trois jours à la ferme à vivre avec les brebis, les chèvres, les vaches, les ânes et toute la
+                basse-cour à tes côtés. Des cabanes à construire dans la forêt, des jeux de pistes, des temps
+                d'exploration de la vie sauvage, de la cuisine au feu de bois, des délices et des fromages...</p>
+              <p>Tu vivras un voyage hors du temps, immergé dans la nature, connecté aux éléments. Un monde à découvrir
+                tout en t'amusant.</p>
+            </div>
+            <div class="img-slot">
+              <!-- <img src="assets/sejour-mini-colo.webp" alt="Mini colo à la ferme" loading="lazy"> -->
+              <span class="img-slot__placeholder">📷</span>
+            </div>
+          </article>
+
+          <article class="sejour sejour--illustrated sejour--reverse" id="colo">
+            <div class="sejour__text">
+              <h4 class="sejour__title">Colo à la ferme</h4>
+              <p class="sejour__meta">Du lundi 10 au samedi 15 août — 6 jours · 12 à 16 ans ·
+                <strong>240&nbsp;€</strong>
+              </p>
+              <p>Je m'installe dans ma tente pour six jours d'immersion totale à la ferme, avec les soins aux animaux,
+                les
+                récoltes du jardin, la cuisine au feu de bois, le pain fait de mes mains, etc.</p>
+              <p>Je vais vivre au quotidien l'abondance pour subvenir à mes besoins, sans magasin.</p>
+              <p>Mais le séjour ne s'arrête pas là&nbsp;! Des jeux, des constructions de cabanes, des explorations nature
+                et parfois nocturnes, des veillées sous les étoiles… et pour finir un campement sauvage en autonomie
+                complète au cœur de la forêt.</p>
+            </div>
+            <div class="img-slot">
+              <!-- <img src="assets/sejour-colo.webp" alt="Colo à la ferme" loading="lazy"> -->
+              <span class="img-slot__placeholder">📷</span>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 
-    <!-- ========== DÉTAILS DES SÉJOURS ========== -->
-    <section class="section section--sejours" id="sejours-detail">
-      <div class="section__inner">
+    <!-- Sub 1.4 : Activités pédagogiques -->
+    <section class="subsection subsection--d" id="activites-pedagogiques">
+      <div class="subsection__inner">
+        <h3 class="block__title">…des activités pédagogiques pour école, centre d'accueil, ou autre institution</h3>
+        <p>Des activités tout au long de l'année, ou une semaine à vivre à la ferme ou une sortie à la journée. Tout est
+          possible à la ferme arc-en-ciel&nbsp;!</p>
 
-        <!-- Séjour 1 : Vélo -->
-        <article class="sejour" id="velo">
-          <div class="sejour__image">
-            <!-- Remplacez le contenu par : <img src="assets/votre-photo.jpg" alt="Séjour itinérant à vélo"> -->
-            <span class="sejour__image-placeholder">📷 Ajouter une photo</span>
+        <p class="block__label">Quelques thèmes proposés&nbsp;:</p>
+
+        <div class="themes-grid">
+          <div class="theme-card">
+            <h5 class="theme-card__title">« De la graine à l'assiette »</h5>
+            <p>Comprendre les cycles d'évolution des plantes, leurs besoins, la fertilité du sol, le compost, les soins
+              à la Terre&nbsp;: semis, plantations, récolte, cuisine...</p>
           </div>
-          <div class="sejour__content">
-            <h3 class="sejour__title">Séjour itinérant à vélo</h3>
-            <p class="sejour__meta">Du Lundi 6 au Samedi 11 Juillet — 6 jours · 12-16 ans · <strong>300&nbsp;€</strong></p>
-            <p class="sejour__text">À vélo le long de l'océan…</p>
-            <p class="sejour__text">25 à 30 km par jour à pédaler sur les chemins et les routes aménagées, des baignades dans l'océan, des nuits en camping ou dans la forêt, des repas organisés par l'équipe des cyclistes expérimentés qui vont tout gérer cette année&nbsp;!</p>
-            <p class="sejour__note">Camping compris, trajet non compris</p>
+          <div class="theme-card">
+            <h5 class="theme-card__title">« Le temps de 7 lunes et la vie apparaît »</h5>
+            <p>Les besoins physiologiques des animaux, la gestation, la mise bas, les attentions de l'éleveur,
+              l'accompagnement des nouveaux nés, la traite, le lait, les fromages...</p>
           </div>
-        </article>
-
-        <hr class="sejour__separator">
-
-        <!-- Séjour 2 : Fermier·e (Juillet) -->
-        <article class="sejour sejour--reverse" id="fermier-1">
-          <div class="sejour__image">
-            <!-- Remplacez le contenu par : <img src="assets/votre-photo.jpg" alt="Ma vie de fermier·e"> -->
-            <span class="sejour__image-placeholder">📷 Ajouter une photo</span>
-          </div>
-          <div class="sejour__content">
-            <h3 class="sejour__title">Ma vie de fermier·e</h3>
-            <p class="sejour__meta">Du Jeudi 16 au Vendredi 17 Juillet — 2 jours · 6-9 ans · <strong>80&nbsp;€</strong></p>
-            <p class="sejour__text">Rentre dans la peau d'un fermier, entouré d'animaux bienveillants et généreux en lait et en tendresse. Au milieu d'un jardin rempli de délices à récolter puis à cuisiner, accompagné d'un bon pain fait de tes mains, tu te reposeras le soir le cœur rempli de joie quand tout ton troupeau rassasié et bien soigné s'endormira comblé…</p>
-            <p class="sejour__text">Jeux et baignade l'après-midi à l'heure où les bergers font la sieste&nbsp;!</p>
-            <p class="sejour__note">Aussi proposé du 19 au 20 Août — <a href="#fermier-2">voir ci-dessous</a></p>
-          </div>
-        </article>
-
-        <hr class="sejour__separator">
-
-        <!-- Séjour 3 : Ânes -->
-        <article class="sejour" id="anes">
-          <div class="sejour__image">
-            <!-- Remplacez le contenu par : <img src="assets/votre-photo.jpg" alt="À pas d'ânes"> -->
-            <span class="sejour__image-placeholder">📷 Ajouter une photo</span>
-          </div>
-          <div class="sejour__content">
-            <h3 class="sejour__title">À pas d'ânes…</h3>
-            <p class="sejour__meta">Du Mardi 21 au Jeudi 23 Juillet — 3 jours · 9-11 ans · <strong>120&nbsp;€</strong></p>
-            <p class="sejour__text">Imagine une vie sur les chemins, accompagné de deux êtres aux grandes oreilles, courageux, qui t'aident à porter le matériel de campement et qui attendent en retour de recevoir tes caresses et ton amour…</p>
-            <p class="sejour__text">Avec un groupe de jeunes aventuriers comme toi, vous partagerez la vie quotidienne&nbsp;: chercher le bois, faire le feu, monter le campement du soir, créer des veillées de rêves et d'histoires sous les étoiles… Voilà les trois jours itinérants qui s'annoncent à toi&nbsp;!</p>
-          </div>
-        </article>
-
-        <hr class="sejour__separator">
-
-        <!-- Séjour 4 : Rando -->
-        <article class="sejour sejour--reverse" id="rando">
-          <div class="sejour__image">
-            <!-- Remplacez le contenu par : <img src="assets/votre-photo.jpg" alt="Rando montagne"> -->
-            <span class="sejour__image-placeholder">📷 Ajouter une photo</span>
-          </div>
-          <div class="sejour__content">
-            <h3 class="sejour__title">Rando montagne</h3>
-            <p class="sejour__meta">Du Lundi 27 au Vendredi 31 Juillet — 5 jours · 12-16 ans · <strong>200&nbsp;€</strong></p>
-            <p class="sejour__text">Mes godillots bien lacés, le sac à dos bien équilibré, je suis prêt à partir en itinérance avec toute l'équipe des vaillants randonneurs aidés des ânes.</p>
-            <p class="sejour__text">Que l'aventure commence&nbsp;! Vivre au cœur de la nature, apprendre à s'adapter aux éléments, se repérer sur les cartes et suivre le bon chemin, organiser ensemble la vie quotidienne, le feu, le campement, les jeux et les veillées&nbsp;: une expérience engagée vers l'autonomie et l'entraide.</p>
-          </div>
-        </article>
-
-        <hr class="sejour__separator">
-
-        <!-- Séjour 5 : Mini colo -->
-        <article class="sejour" id="mini-colo">
-          <div class="sejour__image">
-            <!-- Remplacez le contenu par : <img src="assets/votre-photo.jpg" alt="Mini colo à la ferme"> -->
-            <span class="sejour__image-placeholder">📷 Ajouter une photo</span>
-          </div>
-          <div class="sejour__content">
-            <h3 class="sejour__title">Mini colo à la ferme</h3>
-            <p class="sejour__meta">Du Mardi 4 au Jeudi 6 Août — 3 jours · 9-11 ans · <strong>120&nbsp;€</strong></p>
-            <p class="sejour__text">Imagine trois jours à la ferme à vivre avec les brebis, les chèvres, les vaches, les ânes et toute la basse-cour à tes côtés. Des cabanes à construire dans la forêt, des jeux de pistes, des temps d'exploration de la vie sauvage, de la cuisine au feu de bois, des délices et des fromages...</p>
-            <p class="sejour__text">Tu vivras un voyage hors du temps, immergé dans la nature, connecté aux éléments. Un monde à découvrir tout en t'amusant.</p>
-          </div>
-        </article>
-
-        <hr class="sejour__separator">
-
-        <!-- Séjour 6 : Colo -->
-        <article class="sejour sejour--reverse" id="colo">
-          <div class="sejour__image">
-            <!-- Remplacez le contenu par : <img src="assets/votre-photo.jpg" alt="Colo à la ferme"> -->
-            <span class="sejour__image-placeholder">📷 Ajouter une photo</span>
-          </div>
-          <div class="sejour__content">
-            <h3 class="sejour__title">Colo à la ferme</h3>
-            <p class="sejour__meta">Du Lundi 10 au Samedi 15 Août — 6 jours · 12-16 ans · <strong>240&nbsp;€</strong></p>
-            <p class="sejour__text">Je m'installe dans ma tente pour six jours d'immersion totale à la ferme, avec les soins aux animaux, les récoltes du jardin, la cuisine au feu de bois, le pain fait de mes mains, etc.</p>
-            <p class="sejour__text">Je vais vivre au quotidien l'abondance pour subvenir à mes besoins, sans magasin.</p>
-            <p class="sejour__text">Mais le séjour ne s'arrête pas là&nbsp;! Des jeux, des constructions de cabanes, des explorations nature et parfois nocturnes, des veillées sous les étoiles… et pour finir un campement sauvage en autonomie complète au cœur de la forêt.</p>
-          </div>
-        </article>
-
-        <hr class="sejour__separator">
-
-        <!-- Séjour 7 : Fermier·e (Août) -->
-        <article class="sejour" id="fermier-2">
-          <div class="sejour__image">
-            <!-- Remplacez le contenu par : <img src="assets/votre-photo.jpg" alt="Ma vie de fermier·e (Août)"> -->
-            <span class="sejour__image-placeholder">📷 Ajouter une photo</span>
-          </div>
-          <div class="sejour__content">
-            <h3 class="sejour__title">Ma vie de fermier·e</h3>
-            <p class="sejour__meta">Du Mercredi 19 au Jeudi 20 Août — 2 jours · 6-9 ans · <strong>80&nbsp;€</strong></p>
-            <p class="sejour__text">Rentre dans la peau d'un fermier, entouré d'animaux bienveillants et généreux en lait et en tendresse. Au milieu d'un jardin rempli de délices à récolter puis à cuisiner, accompagné d'un bon pain fait de tes mains, tu te reposeras le soir le cœur rempli de joie quand tout ton troupeau rassasié et bien soigné s'endormira comblé…</p>
-            <p class="sejour__text">Jeux et baignade l'après-midi à l'heure où les bergers font la sieste&nbsp;!</p>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- ========== PROGRAMME À L'ANNÉE ========== -->
-    <section class="section section--annee" id="annee">
-      <div class="section__inner">
-        <h2 class="section__title">Programme à l'année</h2>
-
-        <!-- Groupes réguliers -->
-        <div class="annee-block" id="groupes-reguliers">
-          <h3 class="annee-block__title">Accueil de groupe régulier</h3>
-          <p class="annee-block__subtitle">Tout au long de l'année — groupe de 4 à 6 enfants</p>
-
-          <div class="table-wrapper">
-            <table class="summary-table">
-              <thead>
-                <tr>
-                  <th>Âge</th>
-                  <th>Groupe</th>
-                  <th>Fréquence</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>6 / 9 ans</td>
-                  <td>Les Explorateurs de la Nature</td>
-                  <td>2 mercredis / mois</td>
-                </tr>
-                <tr>
-                  <td>9 / 12 ans</td>
-                  <td>Le Clan des Aventuriers</td>
-                  <td>2 samedis / mois — parfois week-end entier</td>
-                </tr>
-                <tr>
-                  <td>12 / 15 ans</td>
-                  <td>Aventure Nature</td>
-                  <td>1 week-end / mois</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <p class="annee-block__tarif"><strong>Tarifs&nbsp;:</strong> 25&nbsp;€ / journée — 60&nbsp;€ le week-end · Repas bio compris, produits de la ferme</p>
-        </div>
-
-        <hr class="annee__separator">
-
-        <!-- Description des groupes -->
-        <div class="annee-block" id="vie-ferme">
-          <h3 class="annee-block__title">Des groupes réguliers au fil de l'année</h3>
-
-          <div class="annee-block__section">
-            <div class="annee-block__image">
-              <!-- Remplacez par : <img src="assets/votre-photo.jpg" alt="Découvrir la vie à la ferme"> -->
-              <span class="sejour__image-placeholder">📷 Ajouter une photo</span>
-            </div>
-            <div>
-              <h4 class="annee-block__heading">Pour découvrir la vie à la ferme au fil des saisons</h4>
-              <p>En participant aux soins quotidiens&nbsp;: nourrir, traire, amener au pré, etc. En rencontrant les animaux régulièrement on apprend à les connaître, à créer un lien de confiance et alors une complicité profonde s'installe.</p>
-              <p>À la ferme Arc-en-ciel, Brebis, Chèvres, Vaches, Ânes, Poules, etc. sont habitués à cette rencontre et se réjouissent de ces temps d'échange dans la douceur et la bienveillance.</p>
-            </div>
-          </div>
-
-          <div class="annee-block__section">
-            <div class="annee-block__image">
-              <!-- Remplacez par : <img src="assets/votre-photo.jpg" alt="Expérience avec les éléments"> -->
-              <span class="sejour__image-placeholder">📷 Ajouter une photo</span>
-            </div>
-            <div>
-              <h4 class="annee-block__heading">Pour vivre une expérience totale avec les éléments</h4>
-              <p>On touche, on sent, on joue, on marche, on contemple, on prend le temps. À travers de multiples activités dans les bois, sur les chemins&nbsp;:</p>
-              <p>Chasse aux trésors, jeux d'exploration, avec tous nos sens, jeux de piste, affût, observation botanique, construction cabane, création land'art, et tous jeux libres laissant place à l'imagination et à la joie&nbsp;!</p>
-            </div>
-          </div>
-
-          <div class="annee-block__section">
-            <div class="annee-block__image">
-              <!-- Remplacez par : <img src="assets/votre-photo.jpg" alt="Être ensemble"> -->
-              <span class="sejour__image-placeholder">📷 Ajouter une photo</span>
-            </div>
-            <div>
-              <h4 class="annee-block__heading">Pour être ensemble</h4>
-              <p>Se rencontrer, faire partie d'un groupe soudé par des liens de solidarité, de respect, d'entraide, de partage et d'amitié.</p>
-              <p>Un groupe d'explorateurs de la vie qui grandissent en se soutenant, en coopérant, en se nourrissant de la différence et de la reconnaissance des valeurs uniques de chacun.</p>
-              <p>Nous serons alors capables de rêver puis réaliser des grands projets tous ensemble&nbsp;: constructions collectives, aventure en pleine Nature sur plusieurs jours, gestion autonome d'une sortie, et toute autre cocréation naissant de cette force et ce pouvoir immense qu'a le partage.</p>
-            </div>
-          </div>
-        </div>
-
-        <hr class="annee__separator">
-
-        <!-- Les 4 saisons -->
-        <div class="annee-block" id="saisons">
-          <h3 class="annee-block__title">Une année à la ferme</h3>
-
-          <div class="saisons-grid">
-            <article class="saison" id="automne">
-              <div class="saison__image">
-                <!-- Remplacez par : <img src="assets/votre-photo.jpg" alt="Automne à la ferme"> -->
-                <span class="sejour__image-placeholder">📷 Automne</span>
-              </div>
-              <h4 class="saison__title">Automne</h4>
-              <p class="saison__months">Septembre · Octobre · Novembre</p>
-              <p>C'est le temps des récoltes à la ferme, ou dans les bois, des cuisines de délices de champignons et de châtaignes. Les animaux sont au repos, c'est la pause de la traite et des fabrications fromagères, les ventres des mères se gonflent pour se préparer à accueillir les nouvelles vies.</p>
-              <p>On peut encore faire de longues balades aux couleurs flamboyantes, tant que la neige n'est pas descendue, les ânes se font une joie de nous suivre sur les chemins…</p>
-            </article>
-
-            <article class="saison" id="hiver">
-              <div class="saison__image">
-                <!-- Remplacez par : <img src="assets/votre-photo.jpg" alt="Hiver à la ferme"> -->
-                <span class="sejour__image-placeholder">📷 Hiver</span>
-              </div>
-              <h4 class="saison__title">Hiver</h4>
-              <p class="saison__months">Décembre · Janvier · Février</p>
-              <p>La neige a recouvert les sommets, et bientôt elle viendra couvrir champs et toits de la ferme. Les luges et les raquettes seront de sortie, mais les animaux eux resteront bien au chaud…</p>
-              <p>Il faudra les nourrir, accompagner les naissances, traire, faire téter les agneaux, les chevreaux, prendre soin sans relâche, nos mains et nos attentions au quotidien les feront survivre en ces temps de froid et de vulnérabilité.</p>
-              <p>Un poêle bien nourri, une bonne flambée, un bon lait chaud, de beaux contes et de beaux partages et jeux nous réchaufferont assurément.</p>
-            </article>
-
-            <article class="saison" id="printemps">
-              <div class="saison__image">
-                <!-- Remplacez par : <img src="assets/votre-photo.jpg" alt="Printemps à la ferme"> -->
-                <span class="sejour__image-placeholder">📷 Printemps</span>
-              </div>
-              <h4 class="saison__title">Printemps</h4>
-              <p class="saison__months">Mars · Avril · Mai</p>
-              <p>Le soleil a franchi la crête, l'herbe pousse, les agneaux sont déjà aux aguets pour courir dans la prairie.</p>
-              <p>La spirale des délices refleurit, reverdit, la vie renaît peu à peu, aux premiers chants des oiseaux joyeux débutent les premiers semis, le jardin attend nos soins. La terre a reçu des forces pendant l'hiver et la voilà qui explose de vie, nous aussi&nbsp;!</p>
-              <p>Balades et randos, le gave se gonfle à nouveau, la chaleur s'impose parfois et la baignade avec.</p>
-            </article>
-
-            <article class="saison" id="ete-saison">
-              <div class="saison__image">
-                <!-- Remplacez par : <img src="assets/votre-photo.jpg" alt="Été à la ferme"> -->
-                <span class="sejour__image-placeholder">📷 Été</span>
-              </div>
-              <h4 class="saison__title">Été</h4>
-              <p class="saison__months">Juin · Juillet · Août</p>
-              <p>Des journées longues à n'en plus finir, on cherche la fraîcheur partout, un coin d'ombre, un ruisseau pour se rafraîchir, une herbe tendre où se rouler…</p>
-              <p>On prépare nos sacs à dos pour les grandes aventures de l'été, nos grands projets vont se concrétiser. Périple à vélo, Traversée des montagnes, tous à la ferme pour plusieurs nuits ensemble, de grands feux, des veillées jusqu'aux étoiles.</p>
-              <p>À la ferme, c'est les foins, les récoltes, l'abondance à profusion, on se régale, on partage et on remercie la Nature qui toute l'année nous émerveille et nourrit&nbsp;!</p>
-            </article>
-          </div>
-        </div>
-
-        <hr class="annee__separator">
-
-        <!-- Activités -->
-        <div class="annee-block" id="activites">
-          <h3 class="annee-block__title">Les activités</h3>
-          <p>Les activités de chaque journée ou séjour de rencontre à la ferme ou sur les chemins sont adaptées aux âges, aux capacités physiques de chacun, aux saisons et à la météo du jour.</p>
-        </div>
-
-        <hr class="annee__separator">
-
-        <!-- Accueil personnalisé -->
-        <div class="annee-block" id="accueil-personnalise">
-          <h3 class="annee-block__title">Des temps d'accueil personnalisé</h3>
-          <div class="annee-block__section">
-            <div class="annee-block__image">
-              <!-- Remplacez par : <img src="assets/votre-photo.jpg" alt="Accueil personnalisé"> -->
-              <span class="sejour__image-placeholder">📷 Ajouter une photo</span>
-            </div>
-            <div>
-              <ul class="annee-block__values">
-                <li>Pour se reconnecter à la vie</li>
-                <li>Pour soigner les blessures</li>
-                <li>Pour reprendre confiance</li>
-                <li>Pour se nourrir de beauté</li>
-                <li>Pour développer ses compétences</li>
-                <li>Pour découvrir ses talents</li>
-                <li>Pour s'aimer et s'accepter tel qu'on est</li>
-              </ul>
-              <p><strong>Tout public</strong> — Un accompagnement pour tout âge, de la petite enfance à l'âge adulte, soit seul, soit avec un référent.</p>
-              <p><em>Tout public&nbsp;: IME, ITEP, handicap…</em></p>
-              <p>On avance à petits pas, adaptés aux besoins et à l'évolution de chacun. Toute l'attention est portée sur l'être.</p>
-            </div>
-          </div>
-        </div>
-
-        <hr class="annee__separator">
-
-        <!-- Ferme pédagogique -->
-        <div class="annee-block" id="ferme-pedagogique">
-          <h3 class="annee-block__title">La Ferme Pédagogique</h3>
-          <p>Pour école, centre aéré, ou autre institution.</p>
-          <p>Des projets à l'année ou ponctuels, ou une sortie à la journée, tout est possible à la ferme Arc-en-Ciel.</p>
-
-          <div class="projets-grid">
-            <div class="projet">
-              <h4 class="projet__title">« De la graine à l'assiette »</h4>
-              <p>Comprendre les cycles d'évolution des plantes, leurs besoins, la fertilité du sol, le compost, les soins à la Terre&nbsp;: Semis, Plantation, Récolte, cuisine…</p>
-            </div>
-            <div class="projet">
-              <h4 class="projet__title">« Le temps de 7 lunes et la vie apparaît »</h4>
-              <p>Les besoins physiologiques des animaux, la gestation, la mise bas, les attentions de l'éleveur, l'accompagnement, le lait, les tétées, la traite, les fromages…</p>
-            </div>
-            <div class="projet">
-              <h4 class="projet__title">« Le paysan et le paysage »</h4>
-              <p>Des prairies, la biodiversité, les haies, leurs habitants, les chemins… l'empreinte de l'agriculture dans notre environnement, qualité des sols, impact écologique, etc.</p>
-              <p>Observation, Exploration, Botanique, Peinture, Approche Goethéenne…</p>
-            </div>
+          <div class="theme-card">
+            <h5 class="theme-card__title">« Le paysan et le paysage »</h5>
+            <p>Les prairies, les haies, la biodiversité, les chemins… L'empreinte de l'agriculture dans notre
+              environnement&nbsp;: qualité des sols, impact écologique, etc.</p>
+            <p>Observation, Exploration, Botanique, Peinture, Approche Goethéenne...</p>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ========== CONTACT ========== -->
-    <section class="section section--contact" id="contact">
-      <div class="section__inner">
+    <!-- ================================================================
+         SECTION 2 — À PROPOS
+         ================================================================ -->
+
+    <!-- Sub 2.1 : Une année à la ferme -->
+    <section class="subsection subsection--e" id="a-propos">
+      <div class="subsection__inner">
+        <h2 class="section__title">À propos</h2>
+        <h3 class="block__title" id="annee-ferme">Une année à la ferme</h3>
+
+        <div class="saisons-grid">
+          <article class="saison saison--automne" id="automne">
+            <div class="img-slot img-slot--saison">
+              <!-- <img src="assets/saison-automne.webp" alt="Automne à la ferme" loading="lazy"> -->
+              <span class="img-slot__placeholder">📷 Automne</span>
+            </div>
+            <h4 class="saison__title">Automne</h4>
+            <p class="saison__months">Septembre · Octobre · Novembre</p>
+            <p>C'est le temps des récoltes à la ferme, ou dans les bois, des cuisines de délices de champignons et de
+              châtaignes. Les animaux sont au repos, c'est la pause de la traite et des fabrications fromagères, les
+              ventres des mères se gonflent pour se préparer à accueillir les nouvelles vies.</p>
+            <p>On peut encore faire de longues balades aux couleurs flamboyantes, tant que la neige n'est pas descendue,
+              les ânes se font une joie de nous suivre sur les chemins…</p>
+            <p>La Nature se transforme, les énergies solaires se calment pour revenir aux forces de la terre. Chacun va
+              aménager son terrier ou sa hutte, sa cachette ou sa cabane pour se préparer au froid qui arrive à grand
+              pas…</p>
+          </article>
+
+          <article class="saison saison--hiver" id="hiver">
+            <div class="img-slot img-slot--saison">
+              <!-- <img src="assets/saison-hiver.webp" alt="Hiver à la ferme" loading="lazy"> -->
+              <span class="img-slot__placeholder">📷 Hiver</span>
+            </div>
+            <h4 class="saison__title">Hiver</h4>
+            <p class="saison__months">Décembre · Janvier · Février</p>
+            <p>La neige a recouvert les sommets, et bientôt, elle viendra couvrir champs et toits de la ferme. Les luges
+              et les raquettes seront de sortie, mais les animaux eux resteront bien au chaud…</p>
+            <p>Il faudra les nourrir, accompagner les naissances, traire, faire téter les agneaux, les chevreaux,
+              prendre soin sans relâche, nos mains et nos attentions au quotidien les feront survivre en ces temps de
+              froid et de vulnérabilité.</p>
+            <p>Un poêle bien nourri, une bonne flambée, un bon lait chaud, de beaux contes et de beaux partages et jeux
+              nous réchaufferont assurément. C'est le temps des histoires, des scènes de théâtre et des rêveries
+              aventureuses que nous vivrons au Printemps.</p>
+          </article>
+
+          <article class="saison saison--printemps" id="printemps">
+            <div class="img-slot img-slot--saison">
+              <!-- <img src="assets/saison-printemps.webp" alt="Printemps à la ferme" loading="lazy"> -->
+              <span class="img-slot__placeholder">📷 Printemps</span>
+            </div>
+            <h4 class="saison__title">Printemps</h4>
+            <p class="saison__months">Mars · Avril · Mai</p>
+            <p>Le soleil a franchi la crête, l'herbe pousse, les agneaux sont déjà aux aguets pour courir dans la
+              prairie.</p>
+            <p>La spirale des délices refleurit, reverdit, la vie renaît peu à peu, aux premiers chants des oiseaux
+              joyeux commencent les premiers semis, le jardin attend nos soins. La terre a reçu des forces pendant
+              l'hiver et la voilà qui explose de vie, nous aussi&nbsp;!</p>
+            <p>Balades et randos, le gave se gonfle à nouveau, la chaleur s'impose parfois et la baignade avec.
+              <em>Jacuzzi&nbsp;!</em>
+            </p>
+            <p>Le sac à dos a repris sa place et faune et flore sont sur nos traces, on va dansant, chantant pour la
+              fête du Printemps&nbsp;!</p>
+          </article>
+
+          <article class="saison saison--ete" id="ete-saison">
+            <div class="img-slot img-slot--saison">
+              <!-- <img src="assets/saison-ete.webp" alt="Été à la ferme" loading="lazy"> -->
+              <span class="img-slot__placeholder">📷 Été</span>
+            </div>
+            <h4 class="saison__title">Été</h4>
+            <p class="saison__months">Juin · Juillet · Août</p>
+            <p>Des longues journées à n'en plus finir, on cherche la fraîcheur partout, un coin d'ombre, un ruisseau
+              pour se rafraîchir, une herbe tendre où se rouler…</p>
+            <p>On prépare nos sacs à dos pour les grandes aventures de l'été, nos grands projets vont se concrétiser.
+              Périple à vélo, Traversée des montagnes, tous à la ferme pour plusieurs nuits ensemble, de grands feux, des
+              veillées jusqu'aux étoiles.</p>
+            <p>À la ferme, ce sont les foins, les récoltes, l'abondance à profusion, on se régale, on partage et on
+              remercie la Nature qui toute l'année nous émerveille et nourrit&nbsp;!</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sub 2.2 : Texte du projet pédagogique -->
+    <section class="subsection subsection--f" id="projet-pedagogique">
+      <div class="subsection__inner">
+        <h3 class="block__title">Projet pédagogique</h3>
+
+        <div class="block__section block__section--illustrated block__section--reverse">
+          <div class="prose">
+            <p>La ferme Arc en Ciel est située au cœur des Montagnes en vallée d'Aspe, dans un lieu préservé où vie
+              sauvage et hommes ont encore le même territoire.</p>
+            <p>Cette ferme a pour vocation d'offrir aux enfants un espace de liberté d'être et d'expériences avec les
+              éléments, les animaux, la Terre, les Autres et la vie en général.</p>
+            <p>L'accompagnement est basé sur la bienveillance, l'écoute, le respect de l'être dans son intégralité, son
+              potentiel actuel et celui à venir.</p>
+            <p>Devenir Soi à travers la rencontre, l'ouverture aux autres, les multiples expériences et possibilités
+              d'interagir avec le monde vivant, de créer avec ses mains, mais aussi le retour à soi, se connaître,
+              découvrir ses limites, ses talents, sa partie sensible… cela passe par des temps de pause, de vide,
+              d'expression libre… de douceur de vivre, loin de l'activisme et du divertissement.</p>
+            <p>La Nature offre cet espace privilégié d'immersion totale avec les éléments, les forces vitales&nbsp;;
+              tout
+              est nourriture et éveil des sens, et l'émerveillement ainsi que la contemplation se vivent sans aucun
+              effort.
+            </p>
+            <p>Aucun mot n'est nécessaire, aucune voie toute tracée pour trouver le chemin. Le rôle de l'accompagnant
+              n'est alors plus que d'aider l'être qui chemine à développer sa vigilance, expérimenter en toute sécurité,
+              lui permettre de vivre cette expérience unique sans danger.</p>
+            <p>Mais aussi d'accompagner la vie du groupe vers des attitudes qui permettent de vivre ensemble dans la
+              Paix&nbsp;: découvrir et appliquer la bienveillance, l'empathie, la communication positive, l'écoute et
+              surtout prendre conscience de son interaction avec tout ce qui nous entoure… les conséquences de nos actes,
+              nos paroles, nos pensées… devenir responsable…</p>
+            <p>Voilà tout le travail de l'accompagnant à la Ferme Arc en Ciel et la véritable tâche qui lui est confiée.
+            </p>
+            <p>À travers les jeux en pleine nature, les temps d'exploration, d'aventure, les marches, les veillées
+              autour
+              du feu, les chants, les contes, les rêveries, les soins aux animaux, les soins au jardin, les récoltes, la
+              cuisine, les tâches de la vie quotidienne, les jeux coopératifs, les temps d'échange et de partage, etc.,
+              la
+              ferme offre une expérience concrète avec le monde vivant, et un espace d'éveil et d'épanouissement.</p>
+          </div>
+          <div class="img-slot">
+            <!-- <img src="assets/projet-pedagogique.webp" alt="Projet pédagogique" loading="lazy"> -->
+            <span class="img-slot__placeholder">📷</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================
+         SECTION 3 — CONTACT
+         ================================================================ -->
+
+    <section class="subsection subsection--contact" id="contact">
+      <div class="subsection__inner">
         <h2 class="section__title">Contact</h2>
 
         <div class="contact-grid">
@@ -496,7 +611,7 @@
       </div>
       <iframe class="map-embed"
         src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d61828.0984080103!2d-0.5585437788536586!3d42.97661737326253!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDLCsDU3JzU5LjMiTiAwwrAzMyc0MC40Ilc!5e0!3m2!1sfr!2sfr!4v1778342900748!5m2!1sfr!2sfr"
-        height="400" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+        loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
         title="Localisation de la Ferme Arc-en-Ciel sur Google Maps">
       </iframe>
     </section>

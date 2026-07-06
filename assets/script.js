@@ -29,10 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
   updateHeaderState();
 
   /* ---- Close Mobile Menu on Link Click ---- */
-  document.querySelectorAll('.main-nav__link').forEach((link) => {
+  document.querySelectorAll('.main-nav a').forEach((link) => {
     link.addEventListener('click', () => {
       if (navToggle) navToggle.checked = false;
       updateHeaderState();
     });
   });
+
+  /* ---- Disable Right Click ---- */
+  document.addEventListener('contextmenu', (e) => e.preventDefault());
 });
