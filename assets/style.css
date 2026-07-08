@@ -88,6 +88,9 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 
 .img-link {
@@ -1141,6 +1144,18 @@ p+p {
   padding: 1.2rem;
   font-size: 0.9rem;
   font-weight: 500;
+}
+
+.site-footer a {
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+.site-footer a:hover {
+  opacity: 1;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
 }
 
 /* ============================================
