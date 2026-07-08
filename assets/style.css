@@ -56,7 +56,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -243,7 +242,6 @@ p+p {
   height: 3px;
   width: 23px;
   position: relative;
-  transition: background 0.2s ease;
 }
 
 .nav-toggle-label .navicon::before,
@@ -254,7 +252,6 @@ p+p {
   height: 100%;
   width: 100%;
   position: absolute;
-  transition: all 0.2s ease;
 }
 
 .nav-toggle-label .navicon::before {
@@ -266,7 +263,7 @@ p+p {
 }
 
 .nav-toggle:checked~.main-nav {
-  max-height: 30rem;
+  display: block;
 }
 
 .nav-toggle:checked~.nav-toggle-label .navicon {
@@ -284,10 +281,8 @@ p+p {
 }
 
 .main-nav {
+  display: none;
   clear: both;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease;
   width: 100%;
 }
 
@@ -300,10 +295,19 @@ p+p {
   padding: 0.7rem 1rem;
   font-size: 1.1rem;
   font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+.nav-dropdown__toggle {
+  padding-bottom: 0.2rem;
 }
 
 .main-nav__link:hover {
   opacity: 1;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
 }
 
 /* --- Dropdown nav (mobile: always expanded) --- */
@@ -321,6 +325,15 @@ p+p {
   padding: 0.4rem 0.5rem;
   font-size: 1rem;
   font-weight: 400;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-underline-offset: 3px;
+}
+
+.nav-dropdown__menu a:hover {
+  opacity: 1;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 2px;
 }
 
 /* --- Desktop nav --- */
@@ -335,10 +348,9 @@ p+p {
   }
 
   .main-nav {
+    display: block;
     clear: none;
-    max-height: none;
     width: auto;
-    overflow: visible;
   }
 
   .main-nav__list {
