@@ -91,6 +91,18 @@ img {
   display: block;
 }
 
+.img-link {
+  display: contents;
+}
+
+.img-link:hover {
+  opacity: 1;
+}
+
+.img-link img {
+  cursor: url('link.svg'), auto;
+}
+
 p+p {
   margin-top: 0.8rem;
 }
@@ -127,6 +139,19 @@ p+p {
   }
 }
 
+.btn--download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.block__heading-row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 /* ============================================
    HEADER / NAVIGATION
    ============================================ */
@@ -136,7 +161,6 @@ p+p {
   left: 0;
   z-index: 100;
   width: 100%;
-  opacity: 0;
   pointer-events: none;
 }
 
@@ -148,23 +172,24 @@ p+p {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-color: transparent;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  background-color: rgba(250, 246, 240, 0.65);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 3px solid var(--color-text);
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .site-header.scrolled {
-  border-bottom: 3px solid var(--color-text);
-  opacity: 1;
   pointer-events: auto;
 }
 
 .site-header.scrolled::before {
-  background-color: rgba(250, 246, 240, 0.65);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  opacity: 1;
 }
+
+
 
 .site-header__inner {
   display: flex;
@@ -174,6 +199,12 @@ p+p {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.site-header.scrolled .site-header__inner {
+  opacity: 1;
 }
 
 .site-header__logo {
